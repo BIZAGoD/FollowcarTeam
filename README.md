@@ -9,8 +9,8 @@ Miembros del equipo: 🧑‍🦲
                      Brandon Isai Jimenez Hau
                      Rodrigo De la Cruz Montero
                      Alejandro Magana Lopez
-
-Requisitos previos: Herramientas, tecnologías o librerías necesarias para usar el proyecto.
+                     
+Links de Trabajos: 🏢 https://www.figma.com/design/YWLQphnP8suWY2ZrPbQ1hF/FOLLOWCAR?node-id=55-1597&p=f&t=useVNmzo8VA8skI3-0
 
 Guía de instalación y uso:⚡
 
