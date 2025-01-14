@@ -31,7 +31,7 @@ El mercado de talleres mecánicos en Mérida cuenta con más de 200 establecimie
 
 
 ### Miembros del equipo: 🧑‍🦲
-                       Brandon Isai Jimenez Hau 
+                       Brandon Isai Jimenez Hau     @BIZAGoD
                        Rodrigo De la Cruz Montero   @RodrigoRGM03
                        Hector Enrique Mendoza Nava  @gogphojoh
 
