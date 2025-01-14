@@ -33,20 +33,20 @@ El mercado de talleres mecánicos en Mérida cuenta con más de 200 establecimie
 ### Miembros del equipo: 🧑‍🦲
                        Brandon Isai Jimenez Hau 
                        Rodrigo De la Cruz Montero
-                       Hector Enrique Mendoza Nava
+                       Hector Enrique Mendoza Nava  @gogphojoh
 
 
-
-                     
 ### Links de Figma: 🏢
+
+FIGMA PRINCIPAL:
+https://www.figma.com/design/YWLQphnP8suWY2ZrPbQ1hF/FOLLOWCAR?node-id=1-54086&p=f&t=YfzD4n3RzFTcsuzI-0
+
+NOTION PRINCIPAL:
+https://www.notion.so/FollowCar-17bf1e121771807c81fffeeffa7522d4?pvs=4
+
+FIGMA PROCESOS:
+https://www.figma.com/design/WANtXnS2PVLWPAu6bRJ9PF/Procesos_FOLLOWCAR?t=UXWtaXlCHpE2jZxX-1  
 
 
 ### Herramientas a utilizar para el desarollo: ⛏️
-
-Ejemplos o capturas de pantalla: 🤷‍♂️
-
-Contribución: 🎗️ Instrucciones para que otros desarrolladores puedan colaborar.
-
-Licencia: 💵
-
-Contacto: Soportes y contactos 🗒️ : 9994965862
+-- a decidir --
