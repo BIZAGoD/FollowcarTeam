@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/FOLLOWCAR-API-TEAM.props" />
+</Project>
