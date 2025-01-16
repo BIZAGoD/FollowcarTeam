@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2bz5pr5HmHAiy+ImbjQ8cdiYGbay9fL7r97e3WMhtRmB9xiBO7DnuanW/VYTCEP3HxD3dllBJb8aeRjD8rFRjw==",
+  "dgSpecHash": "kOcaLve2yqj93beubQHEUrul5hhZqqwfbLVm1dJOnOhDnojBd+4iEm1S7Za6Ntqc0/2Fs+bPONPmAQbJRtqIyw==",
   "success": true,
-  "projectFilePath": "/home/gogphojoh/FOLLOWCAR-API-TEAM/FOLLOWCAR-API-TEAM.csproj",
+  "projectFilePath": "/home/gogphojoh/Documents/GitHub/FollowcarTeam/src/FOLLOWCAR-API-TEAM/FOLLOWCAR-API-TEAM.csproj",
   "expectedPackageFiles": [
     "/home/gogphojoh/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/gogphojoh/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
