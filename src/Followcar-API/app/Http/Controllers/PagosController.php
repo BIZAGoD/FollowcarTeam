@@ -12,6 +12,7 @@ class PagosController extends Controller
      */
     public function index()
     {
+        
         $pagos = Pagos::all();
         return response()->json($pagos,200);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Diagnosticos;
 use Illuminate\Http\Request;
+use app\Models\Citas;
 
 class DiagnosticosController extends Controller
 {
@@ -12,6 +13,13 @@ class DiagnosticosController extends Controller
     public function index()
     {
         $diagnosticos = Diagnosticos::all();
+        $citas = Citas::all();
+
+        //Optimizar Endpoints ahorrando gets innecesarios.
+        $response = [
+            'diagnosticos' => $diagnosticos,
+            'citas' => $citas,
+        ];
         return response()->json($diagnosticos, 200);
     }
 
