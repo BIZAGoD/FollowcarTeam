@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FOLLOWCAR-API-TEAM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d19b864ac9fe8b044e51536d3a189aa099ce293")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c045ca9c0c12e61461ea52e876d7bf416079d417")]
 [assembly: System.Reflection.AssemblyProductAttribute("FOLLOWCAR-API-TEAM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FOLLOWCAR-API-TEAM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
