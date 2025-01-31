@@ -26,6 +26,7 @@ class UsuariosController extends Controller
             'Apellido' => 'required|string',
             'email' => 'required|email',
             'Telefono' => 'required|string',
+            'Clave' => 'required|string',
         ]);
 
         $usuario = Usuarios::create($validation);
@@ -51,6 +52,7 @@ class UsuariosController extends Controller
             'Apellido' => 'required|string',
             'email' => 'required|email',
             'Telefono' => 'required|string',
+            'Clave' => 'required|string',
         ]);
 
         $usuario = Usuarios::find($id);

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('telefono');
             $table->string('email');
+            $table->string('clave');
             $table->timestamps();
         });
 
@@ -25,7 +26,8 @@ return new class extends Migration
             'nombre' => 'Juan',
             'apellido' => 'Perez',
             'telefono' => '12345678',
-            'email' => 'juanjo@gmail.com'
+            'email' => 'juanjo@gmail.com',
+            'clave' => '12345678'
         ]);
     }
 

@@ -11,5 +11,5 @@ class Usuarios extends Model
     protected $table = 'Usuarios';
     protected $primaryKey = 'id';
     public $incrementing = true;
-    protected $fillable = ['Nombre', 'Apellido', 'email', 'Telefono'];
+    protected $fillable = ['Nombre', 'Apellido', 'email', 'Telefono', 'Clave'];
 }
