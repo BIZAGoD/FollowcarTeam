@@ -10,18 +10,20 @@
     <div class="bg-gray-900 p-8 rounded-lg shadow-lg w-96">
         <h2 class="text-2xl font-bold text-center text-red-500 mb-6">FollowCar</h2>
         
-        <form action="" method="POST">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="mb-4">
                 <label for="email" class="block text-blue-400 font-semibold mb-2">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required
-                    class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-red-500">
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-red-500"
+                    placeholder="correo@ejemplo.com">
             </div>
             
             <div class="mb-4">
                 <label for="password" class="block text-blue-400 font-semibold mb-2">Contraseña</label>
-                <input type="password" id="password" name="password" required
-                    class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-red-500">
+                <input type="password" id="password" name="password" required autocomplete="current-password"
+                    class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-red-500"
+                    placeholder="********">
             </div>
             
             <button type="submit" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Iniciar Sesión</button>

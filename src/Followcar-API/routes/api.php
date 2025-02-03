@@ -20,6 +20,8 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\TiposServicioController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\VehiculosController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TalleresController;
 
 Route::prefix('categoriasInventario')->group(function () {
     Route::get('/', [CategoriasInventarioController::class, 'index']);
@@ -172,5 +174,20 @@ Route::prefix('vehiculos')->group(function () {
     Route::put('/update/{id}', [VehiculosController::class, 'update']);
     Route::delete('/destroy/{id}', [VehiculosController::class, 'destroy']);
 });
+
+Route::prefix('auth')->group(function () {
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+    Route::get('/user', [LoginController::class, 'user'])->middleware('auth:sanctum');
+});
+
+Route::prefix('talleres')->group(function () {
+    Route::get('/', [TalleresController::class, 'index']);
+    Route::post('/store', [TalleresController::class, 'store']);
+    Route::get('/show/{id}', [TalleresController::class, 'show']);
+    Route::put('/update/{id}', [TalleresController::class, 'update']);
+    Route::delete('/destroy/{id}', [TalleresController::class, 'destroy']);
+});
+
 
 ?>
