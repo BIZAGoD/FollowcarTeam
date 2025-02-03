@@ -1,3 +1,4 @@
+@@ -0,0 +1,43 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -12,22 +13,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Usuarios', function (Blueprint $table) {
+        Schema::create('Talleres', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
-            $table->string('Apellido');
+            $table->string('Direccion');
             $table->string('Telefono');
             $table->string('Email');
-            $table->string('Clave');
+            $table->string('Horario');
+            $table->string('Logo');
             $table->timestamps();
         });
 
-        DB::table('Usuarios')->insert([
-            'Nombre' => 'Juan',
-            'Apellido' => 'Perez',
-            'Telefono' => '12345678',
-            'Email' => 'juanjo@gmail.com',
-            'Clave' => '12345678'
+        DB::table('Talleres')->insert([
+            'Nombre' => 'Taller de Prueba',
+            'Direccion' => 'Calle 123',
+            'Telefono' => '1234567890',
+            'Email' => 'taller@gmail.com',
+            'Horario' => 'Lunes a Viernes de 9:00 a 18:00',
+            'Logo' => 'logo.png',
         ]);
     }
 
@@ -36,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Usuarios');
+        Schema::dropIfExists('Talleres');
     }
 };

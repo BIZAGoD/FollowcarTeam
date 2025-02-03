@@ -20,6 +20,7 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\TiposServicioController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\VehiculosController;
+use App\Http\Controllers\TalleresController;
 
 Route::prefix('categoriasInventario')->group(function () {
     Route::get('/', [CategoriasInventarioController::class, 'index']);
@@ -171,6 +172,14 @@ Route::prefix('vehiculos')->group(function () {
     Route::get('/show/{id}', [VehiculosController::class, 'show']);
     Route::put('/update/{id}', [VehiculosController::class, 'update']);
     Route::delete('/destroy/{id}', [VehiculosController::class, 'destroy']);
+});
+
+Route::prefix('talleres')->group(function () {
+    Route::get('/', [TalleresController::class, 'index']);
+    Route::post('/store', [TalleresController::class, 'store']);
+    Route::get('/show/{id}', [TalleresController::class, 'show']);
+    Route::put('/update/{id}', [TalleresController::class, 'update']);
+    Route::delete('/destroy/{id}', [TalleresController::class, 'destroy']);
 });
 
 ?>
