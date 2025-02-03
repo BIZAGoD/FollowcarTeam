@@ -24,7 +24,7 @@ class UsuariosController extends Controller
         $validation = $request->validate([
             'Nombre' => 'required|string',
             'Apellido' => 'required|string',
-            'Email' => 'required|email',
+            'email' => 'required|email',
             'Telefono' => 'required|string',
             'Clave' => 'required|string',
         ]);
