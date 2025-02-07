@@ -21,6 +21,7 @@ use App\Http\Controllers\TiposServicioController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\TalleresController;
+use App\Http\Controllers\CitasClienteController;
 
 Route::prefix('categoriasInventario')->group(function () {
     Route::get('/', [CategoriasInventarioController::class, 'index']);
@@ -180,6 +181,14 @@ Route::prefix('talleres')->group(function () {
     Route::get('/show/{id}', [TalleresController::class, 'show']);
     Route::put('/update/{id}', [TalleresController::class, 'update']);
     Route::delete('/destroy/{id}', [TalleresController::class, 'destroy']);
+});
+
+Route::prefix('citasClientes')->group(function () {
+    Route::get('/', [CitasClienteController::class, 'index']);
+    Route::post('/store', [CitasClienteController::class, 'store']);
+    Route::get('/show/{id}', [CitasClienteController::class, 'show']);
+    Route::put('/update/{id}', [CitasClienteController::class, 'update']);
+    Route::delete('/destroy/{id}', [CitasClienteController::class, 'destroy']);
 });
 
 ?>
