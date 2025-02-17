@@ -22,7 +22,7 @@ class CitasClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([ //'Nombre', 'Apellido', 'Telefono', 'Email', 'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
+        $validation = $request->validate([
             'Nombre' => 'required|string',
             'Apellido' => 'required|string',
             'Telefono' => 'required|string',
@@ -31,12 +31,18 @@ class CitasClienteController extends Controller
             'Marca' => 'required|string',
             'Anio' => 'required|string',
             'Placas' => 'required|string',
-            'FechaCita' => 'required|datetime',
+            'FechaCita' => 'required|date_format:d-m-Y',
         ]);
-
+    
+        // Convert FechaCita to Y-m-d format for storage
+        $validation['FechaCita'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['FechaCita'])->format('Y-m-d');
+    
         $citascliente = CitasCliente::create($validation);
+    
         return response()->json($citascliente, 201);
     }
+    
+    
 
     /**
      * Display the specified resource.
@@ -62,12 +68,13 @@ class CitasClienteController extends Controller
             'Marca' => 'required|string',
             'Anio' => 'required|string',
             'Placas' => 'required|string',
-            'FechaCita' => 'required|datetime',
+            'FechaCita' => 'required|date_format:d-m-Y',
         ]);
-
+    
+        $validation['FechaCita'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['FechaCita'])->format('Y-m-d');
         $citacliente = CitasCliente::find($id);
         $citacliente->update($validation);
-        return response()->json($citacliente, 200);
+        return response()->json($citacliente, 203);
     }
 
     /**

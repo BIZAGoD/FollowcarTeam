@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('Marca');
             $table->string('Anio');
             $table->string('Placas');
-            $table->timestamp('FechaCita');
+            $table->date('FechaCita');
             $table->timestamps();
         });
 
