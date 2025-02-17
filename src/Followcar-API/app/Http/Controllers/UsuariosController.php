@@ -29,7 +29,7 @@ class UsuariosController extends Controller
             'Email' => 'required|email',
             'Telefono' => 'required|string',
             'Clave' => 'required|string',
-            'Imagen' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'Imagen' => 'image|mimes:jpg,jpeg,png|max:2048',
         ]);
     
         if ($request->hasFile('Imagen')) {
