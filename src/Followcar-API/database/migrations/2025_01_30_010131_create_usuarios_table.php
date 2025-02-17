@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Clave');
+            $table->string('Imagen')->nullable(); // Nuevo campo para la imagen
             $table->timestamps();
         });
-
+        
         DB::table('Usuarios')->insert([
             'Nombre' => 'Juan',
             'Apellido' => 'Perez',

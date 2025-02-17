@@ -22,7 +22,6 @@ use App\Http\Controllers\{
     VehiculosController,
     TalleresController,
     CitasClienteController,
-    TiposServicio
 };
 Route::resource('categoriasInventario', CategoriasInventarioController::class);
 Route::resource('categoriasServicio', CategoriasServicioController::class);
