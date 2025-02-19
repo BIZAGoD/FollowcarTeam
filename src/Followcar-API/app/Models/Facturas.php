@@ -12,5 +12,5 @@ class Facturas extends Model
     protected $primaryKey = 'id';
     protected $keyType = 'int';
     public $incrementing = true;
-    protected $fillable = ['Id', 'ClienteId', 'Fecha', 'Total', 'Estado'];
+    protected $fillable = ['ClienteId', 'Fecha', 'Total', 'Estado'];
 }

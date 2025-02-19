@@ -14,19 +14,19 @@ return new class extends Migration
     {
         Schema::create('Facturas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('ClienteId');
             //$table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->date('fecha');
-            $table->decimal('total', 8, 2);
-            $table->string('estado');
+            $table->date('Fecha');
+            $table->decimal('Total', 8, 2);
+            $table->string('Estado');
             $table->timestamps();
         });
 
         DB::table('Facturas')->insert([
-            'cliente_id' => 1,
-            'fecha' => '2025-01-29',
-            'total' => 100.00,
-            'estado' => 'pendiente',
+            'ClienteId' => 1,
+            'Fecha' => '2025-01-29',
+            'Total' => 100.00,
+            'Estado' => 'pendiente',
         ]);
     }
 
