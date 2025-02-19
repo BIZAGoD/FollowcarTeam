@@ -22,6 +22,7 @@ use App\Http\Controllers\{
     VehiculosController,
     TalleresController,
     CitasClienteController,
+    ServiciosController,
 };
 Route::resource('categoriasInventario', CategoriasInventarioController::class);
 Route::resource('categoriasServicio', CategoriasServicioController::class);
@@ -44,4 +45,5 @@ Route::resource('usuarios', UsuariosController::class);
 Route::resource('vehiculos', VehiculosController::class);
 Route::resource('talleres', TalleresController::class);
 Route::resource('citasClientes', CitasClienteController::class);
+Route::resource('servicios', ServiciosController::class);
 ?>
