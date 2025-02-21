@@ -13,8 +13,7 @@ class UsuariosController extends Controller
     public function index()
     {
         $usuarios = Usuarios::all();
-    
-        return response()->json($usuarios, 200);
+        return response()->json($usuarios);
     }
     
 
@@ -23,34 +22,22 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([
-            'Nombre' => 'required|string',
-            'Apellido' => 'required|string',
+        $validated = $request->validate([
+            'Nombre' => 'required',
+            'Apellido' => 'required',
+            'Telefono' => 'required',
             'Email' => 'required|email',
-            'Telefono' => 'required|string',
-            'Clave' => 'required|string',
-            'Imagen' => 'image|mimes:jpg,jpeg,png|max:2048',
+            'Clave' => 'required',
+            'Imagen' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048' // Accept file upload
         ]);
     
+        // Handle file upload and convert to base64
         if ($request->hasFile('Imagen')) {
-            $file = $request->file('Imagen');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path('uploads');
-            
-            if (!file_exists($path)) {
-                mkdir($path, 0755, true); // Crear carpeta si no existe
-            }
-        
-            $file->move($path, $fileName);
-        
-            // Construir la URL correcta
-            $validation['Imagen'] = url('uploads/' . $fileName);
+            $imageFile = $request->file('Imagen');
+            $validated['Imagen'] = base64_encode(file_get_contents($imageFile));
         }
-        
-        
     
-        $usuario = Usuarios::create($validation);
-    
+        $usuario = Usuarios::create($validated);
         return response()->json($usuario, 201);
     }
     

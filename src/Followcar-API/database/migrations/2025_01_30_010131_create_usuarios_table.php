@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Clave');
-            $table->string('Imagen')->nullable(); // Nuevo campo para la imagen
+            $table->longText('Imagen')->nullable(); // Changed to longText for base64 images 
             $table->timestamps();
         });
         

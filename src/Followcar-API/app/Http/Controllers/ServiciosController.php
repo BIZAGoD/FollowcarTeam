@@ -54,6 +54,7 @@ class ServiciosController extends Controller
             'Precio' => 'required|numeric',
             'Duracion' => 'required|integer'
         ]);
+        
         $servicios = Servicios::find($id);
         if (!$servicios) {
             return response()->json(['message' => 'Servicio no encontrado'], 404);
