@@ -13,11 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('CitasClientes', function (Blueprint $table) {
-            $table->id(); //'Nombre', 'Apellido', 'Telefono', 'Email', 'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
-            $table->string('Nombre');
-            $table->string('Apellido');
-            $table->string('Telefono');
-            $table->string('Email');
+            $table->id(); //'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
             $table->string('Modelo');
             $table->string('Marca');
             $table->string('Anio');
@@ -27,10 +23,6 @@ return new class extends Migration
         });
 
         DB::table('CitasClientes')->insert([
-            'Nombre' => 'Pedro',
-            'Apellido' => 'Hernandez',
-            'Telefono' => '123456789',
-            'Email' => 'pedro@gmail.com',
             'Modelo' => 'Fiesta-ikon',
             'Marca' => 'Ford',
             'Anio' => '2013',

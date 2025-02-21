@@ -11,5 +11,5 @@ class CitasCliente extends Model
     protected $table = 'CitasClientes';
     protected $primaryKey = 'id';
     public $incrementing = true;
-    protected $fillable = ['Nombre', 'Apellido', 'Telefono', 'Email', 'Modelo', 'Marca', 'Anio', 'Placas', 'FechaCita'];
+    protected $fillable = ['Modelo', 'Marca', 'Anio', 'Placas', 'FechaCita'];
 }

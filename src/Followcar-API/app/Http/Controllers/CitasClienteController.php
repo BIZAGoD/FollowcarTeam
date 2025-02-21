@@ -23,10 +23,6 @@ class CitasClienteController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
-            'Nombre' => 'required|string',
-            'Apellido' => 'required|string',
-            'Telefono' => 'required|string',
-            'Email' => 'required|email',
             'Modelo' => 'required|string',
             'Marca' => 'required|string',
             'Anio' => 'required|string',
@@ -59,11 +55,7 @@ class CitasClienteController extends Controller
     public function update(Request $request, string $id)
     {
 
-        $validation = $request->validate([ //'Nombre', 'Apellido', 'Telefono', 'Email', 'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
-            'Nombre' => 'required|string',
-            'Apellido' => 'required|string',
-            'Telefono' => 'required|string',
-            'Email' => 'required|email',
+        $validation = $request->validate([ // 'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
             'Modelo' => 'required|string',
             'Marca' => 'required|string',
             'Anio' => 'required|string',
@@ -74,7 +66,7 @@ class CitasClienteController extends Controller
         $validation['FechaCita'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['FechaCita'])->format('Y-m-d');
         $citacliente = CitasCliente::find($id);
         $citacliente->update($validation);
-        return response()->json($citacliente, 203);
+        return response()->json($citacliente, 204);
     }
 
     /**
