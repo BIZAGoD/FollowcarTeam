@@ -21,10 +21,14 @@ class ServiciosClientesController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'Nombre' => 'required|string',
-            'Descripcion' => 'required|string|max:255',
-            'Precio' => 'required|numeric',
-            'Duracion' => 'required|integer'
+            'taller' => 'required|string',
+            'nombre' => 'required|string',
+            'descripcion' => 'required|string|max:255',
+            'estado' => 'required|string',
+            'observacion' => 'required|string',
+            'duracion' => 'required|integer',
+            'pieza' => 'required|string',
+            'estado_pieza' => 'required|string'
         ]);
         
         $servicios = ServiciosClientes::create($validated);
@@ -49,10 +53,14 @@ class ServiciosClientesController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'Nombre' => 'required|string',
-            'Descripcion' => 'required|string|max:255',
-            'Precio' => 'required|numeric',
-            'Duracion' => 'required|integer'
+            'taller' => 'required|string',
+            'nombre' => 'required|string',
+            'descripcion' => 'required|string|max:255',
+            'estado' => 'required|string',
+            'observacion' => 'required|string',
+            'duracion' => 'required|integer',
+            'pieza' => 'required|string',
+            'estado_pieza' => 'required|string'
         ]);
         $servicios = ServiciosClientes::find($id);
         if (!$servicios) {

@@ -10,6 +10,6 @@ class ServiciosClientes extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['nombre', 'descripcion', 'estado', 'observacion', 'duracion', 'pieza', 'estado_pieza'];
+    protected $fillable = ['taller', 'nombre', 'descripcion', 'estado', 'observacion', 'duracion', 'pieza', 'estado_pieza'];
 
 }
