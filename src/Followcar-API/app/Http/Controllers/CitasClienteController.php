@@ -23,6 +23,7 @@ class CitasClienteController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
+            'Email' => 'required|email',
             'Modelo' => 'required|string',
             'Marca' => 'required|string',
             'Anio' => 'required|string',
@@ -43,9 +44,9 @@ class CitasClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $Email)
     {
-        $citacliente = CitasCliente::find($id);
+        $citacliente = CitasCliente::find($Email);
         return response()->json($citacliente, 200);
     }
 
@@ -54,8 +55,8 @@ class CitasClienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
-        $validation = $request->validate([ // 'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
+        $validation = $request->validate([
+            'Email' => 'required|email',
             'Modelo' => 'required|string',
             'Marca' => 'required|string',
             'Anio' => 'required|string',
@@ -64,7 +65,7 @@ class CitasClienteController extends Controller
         ]);
     
         $validation['FechaCita'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['FechaCita'])->format('Y-m-d');
-        $citacliente = CitasCliente::find($id);
+        $citacliente = CitasCliente::find($validation['Email']);
         $citacliente->update($validation);
         return response()->json($citacliente, 204);
     }
@@ -72,9 +73,9 @@ class CitasClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $Email)
     {
-        $citacliente = CitasCliente::find($id);
+        $citacliente = CitasCliente::find($Email);
         $citacliente->delete();
         return response()->json(null, 204);
     }

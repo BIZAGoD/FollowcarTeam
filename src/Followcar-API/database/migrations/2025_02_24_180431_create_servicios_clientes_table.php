@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ServiciosClientes', function (Blueprint $table) {
-            $table->id();
+            $table->string('email')->primary();
             $table->string('taller');
             $table->string('nombre');
             $table->string('descripcion');
@@ -21,10 +21,10 @@ return new class extends Migration
             $table->integer('duracion');
             $table->string('pieza');
             $table->string('estado_pieza');
-            $table->timestamps();
         });
 
         DB::table('ServiciosClientes')->insert([
+            'Email' => 'test@test.com',
             'taller' => 'Taller 1',
             'nombre' => 'Servicio 1',
             'descripcion' => 'Descripción del servicio 1',

@@ -9,7 +9,9 @@ class CitasCliente extends Model
 {
     use HasFactory;
     protected $table = 'CitasClientes';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    protected $fillable = ['Modelo', 'Marca', 'Anio', 'Placas', 'FechaCita'];
+    protected $primaryKey = 'Email';
+    protected $keyType = 'string';
+    public $incrementing = false;
+    public $timestamps = true;
+    protected $fillable = ['Email', 'Modelo', 'Marca', 'Anio', 'Placas', 'FechaCita'];
 }

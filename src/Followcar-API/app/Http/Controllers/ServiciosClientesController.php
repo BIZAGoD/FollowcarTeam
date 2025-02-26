@@ -21,6 +21,7 @@ class ServiciosClientesController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'email' => 'required|email',
             'taller' => 'required|string',
             'nombre' => 'required|string',
             'descripcion' => 'required|string|max:255',
@@ -53,6 +54,7 @@ class ServiciosClientesController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
+            'email' => 'required|email',
             'taller' => 'required|string',
             'nombre' => 'required|string',
             'descripcion' => 'required|string|max:255',
@@ -62,7 +64,7 @@ class ServiciosClientesController extends Controller
             'pieza' => 'required|string',
             'estado_pieza' => 'required|string'
         ]);
-        $servicios = ServiciosClientes::find($id);
+        $servicios = ServiciosClientes::find($validated['email']);
         if (!$servicios) {
             return response()->json(['message' => 'Servicio no encontrado'], 404);
         }
@@ -73,9 +75,9 @@ class ServiciosClientesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $email)
     {
-        $servicios = ServiciosClientes::find($id);
+        $servicios = ServiciosClientes::find($email);
         if (!$servicios) {
             return response()->json(['message' => 'Servicio no encontrado'], 404);
         }

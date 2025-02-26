@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('CitasClientes', function (Blueprint $table) {
-            $table->id(); //'Modelo', 'Marca', 'Año', 'Placas', 'FechaCita'
+            $table->string('Email')->primary();
             $table->string('Modelo');
             $table->string('Marca');
             $table->string('Anio');
@@ -23,6 +23,7 @@ return new class extends Migration
         });
 
         DB::table('CitasClientes')->insert([
+            'Email' => 'test@test.com',
             'Modelo' => 'Fiesta-ikon',
             'Marca' => 'Ford',
             'Anio' => '2013',

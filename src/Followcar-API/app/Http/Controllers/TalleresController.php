@@ -21,16 +21,22 @@ class TalleresController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
-            'Nombre' => 'required|string',
+        $validated = $request->validate([
+            'Nombre' => 'required|string|unique:Talleres,Nombre',
             'Direccion' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
-            'Horario' => 'required|string',
-            'Logo' => 'required|string',
+            'Horario' => 'required|string', 
+            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $taller = Talleres::create($validate);
+        if ($request->hasFile('Logo')) {
+            $imageFile = $request->file('Logo');
+            $validated['Logo'] = base64_encode
+            (file_get_contents($imageFile));
+        }
+        
+        $taller = Talleres::create($validated);
         return response()->json($taller, 201);
     }
 
@@ -39,7 +45,7 @@ class TalleresController extends Controller
      */
     public function show(string $id)
     {
-        $taller = Talleres::find($id);
+        $taller = Talleres::where('Nombre', $id)->first();
         return response()->json($taller, 200);
     }
 
@@ -48,17 +54,22 @@ class TalleresController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validate = $request->validate([
+        $validated = $request->validate([
             'Nombre' => 'required|string',
             'Direccion' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
             'Horario' => 'required|string',
-            'Logo' => 'required|string',
+            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $taller = Talleres::find($id);
-        $taller->update($validate);
+        if ($request->hasFile('Logo')) {
+            $imageFile = $request->file('Logo');
+            $validated['Logo'] = base64_encode(file_get_contents($imageFile));
+        }
+
+        $taller = Talleres::where('Nombre', $id)->first();
+        $taller->update($validated);
         return response()->json($taller, 200);
     }
 
@@ -67,7 +78,7 @@ class TalleresController extends Controller
      */
     public function destroy(string $id)
     {
-        $taller = Talleres::find($id);
+        $taller = Talleres::where('Nombre', $id)->first();
         $taller->delete();
         return response()->json(null, 204);
     }

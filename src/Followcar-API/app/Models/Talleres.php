@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Talleres extends Model
 {
     protected $table = 'Talleres';
-    protected $primaryKey = 'Id';
-    public $incrementing = true;
+    protected $primaryKey = 'Nombre';
+    public $keyType = 'string';
+    public $incrementing = false;
     protected $fillable = ['Nombre', 'Direccion', 'Telefono', 'Email', 'Horario', 'Logo'];
-    public $timestamps = false;
+    
 }
