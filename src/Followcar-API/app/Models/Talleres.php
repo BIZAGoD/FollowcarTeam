@@ -10,6 +10,6 @@ class Talleres extends Model
     protected $primaryKey = 'Nombre';
     public $keyType = 'string';
     public $incrementing = false;
-    protected $fillable = ['Nombre', 'Direccion', 'Telefono', 'Email', 'Horario', 'Logo'];
+    protected $fillable = ['Nombre', 'Direccion', 'Telefono', 'Email', 'Horario', 'Logo', 'Rescate'];
     
 }

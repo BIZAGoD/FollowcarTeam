@@ -60,7 +60,8 @@ class TalleresController extends Controller
             'Telefono' => 'required|string',
             'Email' => 'required|email',
             'Horario' => 'required|string',
-            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048'
+            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'Rescate' => 'nullable|string'
         ]);
 
         if ($request->hasFile('Logo')) {

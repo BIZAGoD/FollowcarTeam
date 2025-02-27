@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Horario');
+            $table->string('Rescate')->default('No');
             $table->longText('Logo')->nullable();
             $table->timestamps();
         });
@@ -30,6 +31,7 @@ return new class extends Migration
             'Email' => 'taller@gmail.com',
             'Horario' => 'Lunes a Viernes de 9:00 a 18:00',
             'Logo' => 'logo.png',
+            'Rescate' => 'Sí',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
