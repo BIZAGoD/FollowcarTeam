@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Horario');
-            $table->string('Rescate')->default('No');
+            $table->string('Rescate')->nullable();
             $table->longText('Logo')->nullable();
             $table->timestamps();
         });
