@@ -25,6 +25,8 @@ class RescateController extends Controller
             'nombre' => 'required|string',
             'email' => 'required|email',
             'fecha' => 'required|date',
+            'problema' => 'required|string',
+            'descripcion' => 'required|string',
             'estado' => 'required|string',  // Add this line
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',
@@ -54,6 +56,8 @@ class RescateController extends Controller
             'nombre' => 'required|string',
             'email' => 'required|email',
             'fecha' => 'required|date',
+            'problema' => 'required|string',
+            'descripcion' => 'required|string',
             'estado' => 'required|string',  // Add this line
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',

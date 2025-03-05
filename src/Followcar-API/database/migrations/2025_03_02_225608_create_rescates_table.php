@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('nombre')->primary();
             $table->string('email');
             $table->date('fecha');
+            $table->string('problema');
+            $table->string('descripcion');
             $table->string('estado');
             $table->string('latitud')->nullable();
             $table->string('longitud')->nullable();
@@ -26,6 +28,8 @@ return new class extends Migration
             'nombre' => 'Juan Perez',
             'email' => 'juan.perez@gmail.com',
             'fecha' => '2025-03-02',
+            'problema' => 'choque',
+            'descripcion' => 'choque en la esquina de la calle',
             'estado' => 'pendiente',
             'latitud' => '19.4326',
             'longitud' => '-99.1332'
