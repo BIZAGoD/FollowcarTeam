@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('fecha');
             $table->string('lugar');
             $table->string('estado');
+            $table->string('latitud')->nullable();
+            $table->string('longitud')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
@@ -29,6 +31,8 @@ return new class extends Migration
             'fecha' => '2025-03-02',
             'lugar' => 'Santiago',
             'estado' => 'pendiente',
+            'latitud' => '19.4326',
+            'longitud' => '-99.1332'
         ]);
     }
 

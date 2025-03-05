@@ -28,6 +28,8 @@ class RescateController extends Controller
             'fecha' => 'required|date',
             'lugar' => 'required|string',
             'estado' => 'required|string',  // Add this line
+            'latitud' => 'nullable|string',
+            'longitud' => 'nullable|string',
         ]);
         $rescates = Rescates::create($validation);
         return response()->json($rescates, 201);
@@ -56,6 +58,8 @@ class RescateController extends Controller
             'fecha' => 'required|date',
             'lugar' => 'required|string',
             'estado' => 'required|string',  // Add this line
+            'latitud' => 'nullable|string',
+            'longitud' => 'nullable|string',
         ]); 
         $rescates = Rescates::find($id);
         $rescates->update($validation);
