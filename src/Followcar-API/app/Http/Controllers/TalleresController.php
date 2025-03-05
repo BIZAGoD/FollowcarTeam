@@ -23,7 +23,8 @@ class TalleresController extends Controller
     {
         $validated = $request->validate([
             'Nombre' => 'required|string|unique:Talleres,Nombre',
-            'Direccion' => 'required|string',
+            'Latitud' => 'required|string', 
+            'Longitud' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
             'Horario' => 'required|string', 
@@ -56,7 +57,8 @@ class TalleresController extends Controller
     {
         $validated = $request->validate([
             'Nombre' => 'required|string',
-            'Direccion' => 'required|string',
+            'Latitud' => 'required|string', 
+            'Longitud' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
             'Horario' => 'required|string',

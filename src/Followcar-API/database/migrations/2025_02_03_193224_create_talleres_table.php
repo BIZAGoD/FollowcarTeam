@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('Talleres', function (Blueprint $table) {
             $table->string('Nombre')->primary();
-            $table->string('Direccion');
+            $table->string('Latitud')->nullable();
+            $table->string('Longitud')->nullable();
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Horario');
@@ -26,7 +27,8 @@ return new class extends Migration
 
         DB::table('Talleres')->insert([
             'Nombre' => 'Taller de Prueba',
-            'Direccion' => 'Calle 123',
+            'Latitud' => '19.4326',
+            'Longitud' => '-99.1332',
             'Telefono' => '1234567890',
             'Email' => 'taller@gmail.com',
             'Horario' => 'Lunes a Viernes de 9:00 a 18:00',
