@@ -23,10 +23,8 @@ class RescateController extends Controller
     {
         $validation = $request->validate([
             'nombre' => 'required|string',
-            'taller' => 'required|string',
             'email' => 'required|email',
             'fecha' => 'required|date',
-            'lugar' => 'required|string',
             'estado' => 'required|string',  // Add this line
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',
@@ -54,10 +52,8 @@ class RescateController extends Controller
     {
         $validation = $request->validate([
             'nombre' => 'required|string',
-            'taller' => 'required|string',
             'email' => 'required|email',
             'fecha' => 'required|date',
-            'lugar' => 'required|string',
             'estado' => 'required|string',  // Add this line
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',

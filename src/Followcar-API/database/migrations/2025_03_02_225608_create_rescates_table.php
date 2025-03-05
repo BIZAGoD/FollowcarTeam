@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('rescates', function (Blueprint $table) {
             $table->string('nombre')->primary();
-            $table->string('taller');
             $table->string('email');
             $table->date('fecha');
-            $table->string('lugar');
             $table->string('estado');
             $table->string('latitud')->nullable();
             $table->string('longitud')->nullable();
@@ -26,10 +24,8 @@ return new class extends Migration
 
         DB::table('rescates')->insert([
             'nombre' => 'Juan Perez',
-            'taller' => 'Taller de Mecanica',
             'email' => 'juan.perez@gmail.com',
             'fecha' => '2025-03-02',
-            'lugar' => 'Santiago',
             'estado' => 'pendiente',
             'latitud' => '19.4326',
             'longitud' => '-99.1332'

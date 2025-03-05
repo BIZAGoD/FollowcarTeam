@@ -10,5 +10,5 @@ class Rescates extends Model
     protected $primaryKey = 'nombre';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['nombre', 'taller', 'email', 'fecha', 'lugar', 'estado', 'latitud', 'longitud'];
+    protected $fillable = ['nombre', 'email', 'fecha', 'estado', 'latitud', 'longitud'];
 }
