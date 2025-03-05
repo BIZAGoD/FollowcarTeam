@@ -31,6 +31,7 @@ class RescateController extends Controller
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',
         ]);
+        $validation['fecha'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['fecha'])->format('Y-m-d');
         $rescates = Rescates::create($validation);
         return response()->json($rescates, 201);
     }
@@ -62,6 +63,8 @@ class RescateController extends Controller
             'longitud' => 'nullable|string',
         ]); 
         $rescates = Rescates::find($id);
+
+        $validation['fecha'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['fecha'])->format('Y-m-d');
         $rescates->update($validation);
         return response()->json($rescates, 204);
     }
