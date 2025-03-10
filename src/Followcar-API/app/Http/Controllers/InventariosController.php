@@ -26,7 +26,8 @@ class InventariosController extends Controller
             'Descripcion' => 'required|string',
             'Cantidad' => 'required|int',
             'Precio' => 'required|numeric',
-            'CategoriaId' => 'required|int',
+            'Categoria' => 'required|string',
+            'Proveedor' => 'required|string',
         ]);
 
         $inventario = Inventarios::create($validation);
@@ -56,7 +57,8 @@ class InventariosController extends Controller
             'Descripcion' => 'required|string',
             'Cantidad' => 'required|int',
             'Precio' => 'required|numeric',
-            'CategoriaId' => 'required|int',
+            'Categoria' => 'required|string',
+            'Proveedor' => 'required|string',
         ]);
 
         $inventario = Inventarios::find($id);

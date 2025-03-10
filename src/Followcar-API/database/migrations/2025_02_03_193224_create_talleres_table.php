@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Email');
             $table->string('Horario');
-            $table->string('Rescate')->nullable();
+            $table->string('Rescate');
             $table->longText('Logo')->nullable();
             $table->timestamps();
         });

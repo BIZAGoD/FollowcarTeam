@@ -17,5 +17,9 @@ class Mecanicos extends Model
         'Apellido',
         'Telefono',
         'Email',
+        'Taller',
+        'Especialidad',
+        'Experiencia',
+        'Disponibilidad'
     ];
 }

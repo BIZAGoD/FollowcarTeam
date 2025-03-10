@@ -26,6 +26,10 @@ class MecanicosController extends Controller
             'Apellido' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
+            'Taller' => 'nullable|string',
+            'Especialidad' => 'required|string',
+            'Experiencia' => 'required|string',
+            'Disponibilidad' => 'required|string'
         ]);
 
         $mecanico = Mecanicos::create($validation);
@@ -55,6 +59,10 @@ class MecanicosController extends Controller
             'Apellido' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
+            'Taller' => 'nullable|string',
+            'Especialidad' => 'required|string',
+            'Experiencia' => 'required|string',
+            'Disponibilidad' => 'required|string'
         ]);
 
         $mecanico = Mecanicos::find($id);

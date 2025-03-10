@@ -9,14 +9,15 @@ class Inventarios extends Model
 {
     use HasFactory;
     protected $table = 'Inventarios';
-    protected $primaryKey = 'id';
-    protected $keyType = 'int';
+    protected $primaryKey = 'Nombre';
+    protected $keyType = 'string';
     public $incrementing = true;
     protected $fillable = [
         'Nombre',
         'Descripcion',
         'Cantidad',
         'Precio',
-        'CategoriaId',
+        'Categoria',
+        'Proveedor'
     ];
 }

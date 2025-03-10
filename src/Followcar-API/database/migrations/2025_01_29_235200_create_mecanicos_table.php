@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('Apellido');
             $table->string('Telefono');
             $table->string('Email');
+            $table->string('Taller')->nullable();
+            $table->string('Especialidad')->nullable();
+            $table->string('Experiencia')->nullable();
+            $table->string('Disponibilidad')->nullable();
             $table->timestamps();
         });
 
@@ -26,6 +30,10 @@ return new class extends Migration
             'Apellido' => 'Perez',
             'Telefono' => '12345678',
             'Email' => 'juanchotacorta@gmail.com',
+            'Taller' => 'Taller-UTM',
+            'Especialidad' => 'Mecanico-Electrico',
+            'Experiencia' => '5 años',
+            'Disponibilidad' => 'Lunes a Viernes'
         ]);
     }
 

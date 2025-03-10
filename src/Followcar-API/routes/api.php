@@ -50,4 +50,3 @@ Route::resource('citasClientes', CitasClienteController::class);
 Route::resource('servicios', ServiciosController::class);
 Route::resource('serviciosClientes', ServiciosClientesController::class);
 Route::resource('rescates', RescateController::class);
-?>

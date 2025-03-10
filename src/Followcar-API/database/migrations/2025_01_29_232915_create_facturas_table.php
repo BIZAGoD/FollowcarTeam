@@ -18,7 +18,10 @@ return new class extends Migration
             //$table->foreign('cliente_id')->references('id')->on('clientes');
             $table->date('Fecha');
             $table->decimal('Total', 8, 2);
-            $table->string('Estado');
+            $table->string('Descripcion');
+            $table->integer('Cantidad');
+            $table->decimal('Precio', 8, 2);
+            $table->string('Metodo');
             $table->timestamps();
         });
 
@@ -26,7 +29,10 @@ return new class extends Migration
             'ClienteId' => 1,
             'Fecha' => '2025-01-29',
             'Total' => 100.00,
-            'Estado' => 'pendiente',
+            'Descripcion' => 'Compra de productos',
+            'Cantidad' => 1,
+            'Precio' => 100.00,
+            'Metodo' => 'Efectivo'
         ]);
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Talleres;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class TalleresController extends Controller
 {
@@ -28,15 +29,17 @@ class TalleresController extends Controller
             'Telefono' => 'required|string',
             'Email' => 'required|email',
             'Horario' => 'required|string', 
+            'Rescate' => 'nullable|string',
             'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-
+    
+        // Subir la imagen si se adjunta un archivo
         if ($request->hasFile('Logo')) {
             $imageFile = $request->file('Logo');
-            $validated['Logo'] = base64_encode
-            (file_get_contents($imageFile));
+            $uploadedImage = Cloudinary::upload($imageFile->getRealPath())->getSecurePath();
+            $validated['Logo'] = $uploadedImage; // Guardar URL segura de la imagen
         }
-        
+    
         $taller = Talleres::create($validated);
         return response()->json($taller, 201);
     }
@@ -65,13 +68,16 @@ class TalleresController extends Controller
             'Rescate' => 'nullable|string',
             'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+     
+        $taller = Talleres::where('Nombre', $id)->first();
+     
+        // Si hay una nueva imagen, subirla a Cloudinary
         if ($request->hasFile('Logo')) {
             $imageFile = $request->file('Logo');
-            $validated['Logo'] = base64_encode(file_get_contents($imageFile));
+            $uploadedImage = Cloudinary::upload($imageFile->getRealPath())->getSecurePath();
+            $validated['Logo'] = $uploadedImage; // Guardar URL de la imagen
         }
-
-        $taller = Talleres::where('Nombre', $id)->first();
+     
         $taller->update($validated);
         return response()->json($taller, 200);
     }

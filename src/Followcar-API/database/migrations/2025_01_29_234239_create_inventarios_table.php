@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('Descripcion');
             $table->integer('Cantidad');
             $table->decimal('Precio', 8, 2);
-            $table->unsignedBigInteger('CategoriaId');
+            $table->string('Categoria');
+            $table->string('Proveedor');
             $table->timestamps();
         });
 
@@ -27,7 +28,8 @@ return new class extends Migration
             'Descripcion' => 'Descripcion 1',
             'Cantidad' => 10,
             'Precio' => 100.00,
-            'CategoriaId' => 1,
+            'Categoria' => 'Balatas',
+            'Proveedor' => 'Proveedor 1',
         ]);
     }
 

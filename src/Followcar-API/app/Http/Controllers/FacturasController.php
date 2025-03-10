@@ -23,8 +23,10 @@ class FacturasController extends Controller
         $validation = $request->validate([
             'ClienteId' => 'required|int',
             'Fecha' => 'required|date',
-            'Total' => 'required|numeric',
-            'Estado' => 'required|string',
+            'Descripcion' => 'required|string',
+            'Cantidad' => 'required|int',
+            'Precio' => 'required|numeric',
+            'Metodo' => 'required|string'
         ]);
 
         $factura = Facturas::create($validation);
@@ -52,8 +54,10 @@ class FacturasController extends Controller
         $validation = $request->validate([
             'ClienteId' => 'required|int',
             'Fecha' => 'required|date',
-            'Total' => 'required|numeric',
-            'Estado' => 'required|string',
+            'Descripcion' => 'required|string',
+            'Cantidad' => 'required|int',
+            'Precio' => 'required|numeric',
+            'Metodo' => 'required|string'
         ]);
 
         $factura = Facturas::find($id);
