@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Talleres;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
 
 class TalleresController extends Controller
 {
@@ -35,9 +36,11 @@ class TalleresController extends Controller
     
         // Subir la imagen si se adjunta un archivo
         if ($request->hasFile('Logo')) {
-            $imageFile = $request->file('Logo');
-            $uploadedImage = Cloudinary::upload($imageFile->getRealPath())->getSecurePath();
-            $validated['Logo'] = $uploadedImage; // Guardar URL segura de la imagen
+            Configuration::instance(getenv('CLOUDINARY_URL'));
+            $uploadedImage = (new UploadApi())->upload($request->file('Logo')->getRealPath());
+            $validated['Logo'] = $uploadedImage['secure_url'];
+        } else {
+            $validated['Logo'] = null;
         }
     
         $taller = Talleres::create($validated);
@@ -66,16 +69,19 @@ class TalleresController extends Controller
             'Email' => 'required|email',
             'Horario' => 'required|string',
             'Rescate' => 'nullable|string',
-            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'Logo' => 'nullable|file|mimes:jpeg,png,jpg,gif',
         ]);
      
         $taller = Talleres::where('Nombre', $id)->first();
      
         // Si hay una nueva imagen, subirla a Cloudinary
         if ($request->hasFile('Logo')) {
-            $imageFile = $request->file('Logo');
-            $uploadedImage = Cloudinary::upload($imageFile->getRealPath())->getSecurePath();
-            $validated['Logo'] = $uploadedImage; // Guardar URL de la imagen
+            Configuration::instance(getenv('CLOUDINARY_URL'));
+            $uploadedImage = (new UploadApi())->upload($request->file('Logo')->getRealPath());
+            $validated['Logo'] = $uploadedImage['secure_url'];
+        }
+        else {
+            $validated['Logo'] = $taller->Logo;
         }
      
         $taller->update($validated);
