@@ -23,6 +23,7 @@ class MecanicosController extends Controller
     {
         $validation = $request->validate([
             'Nombre' => 'required|string',
+            'Contrasena' => 'required|string',
             'Apellido' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',
@@ -56,6 +57,7 @@ class MecanicosController extends Controller
     {
         $validation = $request->validate([
             'Nombre' => 'required|string',
+            'Contrasena' => 'required|string',
             'Apellido' => 'required|string',
             'Telefono' => 'required|string',
             'Email' => 'required|email',

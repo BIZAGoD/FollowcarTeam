@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rescates extends Model
 {
     protected $table = 'rescates';
-    protected $primaryKey = 'nombre';
+    protected $primaryKey = 'email';
     public $incrementing = false;
     protected $keyType = 'string';
     protected $fillable = ['nombre', 'email', 'fecha', 'problema', 'descripcion', 'estado', 'latitud', 'longitud'];

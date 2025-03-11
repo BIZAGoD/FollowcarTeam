@@ -14,6 +14,7 @@ class Mecanicos extends Model
     public $incrementing = true;
     protected $fillable = [
         'Nombre',
+        'Contrasena',
         'Apellido',
         'Telefono',
         'Email',

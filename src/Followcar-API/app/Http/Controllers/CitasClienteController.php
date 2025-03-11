@@ -53,7 +53,7 @@ class CitasClienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $Email)
     {
         $validation = $request->validate([
             'Email' => 'required|email',

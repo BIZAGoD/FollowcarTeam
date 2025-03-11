@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rescates', function (Blueprint $table) {
-            $table->string('nombre')->primary();
-            $table->string('email');
+            $table->string('nombre');
+            $table->string('email')->primary();
             $table->date('fecha');
             $table->string('problema');
             $table->string('descripcion');

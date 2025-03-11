@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('Mecanicos', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
+            $table->string('Contrasena');
             $table->string('Apellido');
             $table->string('Telefono');
             $table->string('Email');
@@ -27,6 +28,7 @@ return new class extends Migration
 
         DB::table('Mecanicos')->insert([
             'Nombre' => 'Juan',
+            'Contrasena' => '12345678',
             'Apellido' => 'Perez',
             'Telefono' => '12345678',
             'Email' => 'juanchotacorta@gmail.com',

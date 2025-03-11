@@ -41,16 +41,16 @@ class RescateController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $email)
     {
-        $rescates = Rescates::find($id);
+        $rescates = Rescates::find($email);
         return response()->json($rescates, 200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $email)
     {
         $validation = $request->validate([
             'nombre' => 'required|string',
@@ -62,7 +62,7 @@ class RescateController extends Controller
             'latitud' => 'nullable|string',
             'longitud' => 'nullable|string',
         ]); 
-        $rescates = Rescates::find($id);
+        $rescates = Rescates::find($email);
 
         $validation['fecha'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validation['fecha'])->format('Y-m-d');
         $rescates->update($validation);
@@ -72,9 +72,9 @@ class RescateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $email)
     {
-        $rescates = Rescates::find($id);
+        $rescates = Rescates::find($email);
         $rescates->delete();
         return response()->json(null, 204);
     }
