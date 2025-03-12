@@ -37,9 +37,9 @@ class InventariosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $Nombre)
     {
-        $inventario = Inventarios::find($id);
+        $inventario = Inventarios::find($Nombre);
         if($inventario){
             return response()->json($inventario, 200);
         }else{
@@ -50,7 +50,7 @@ class InventariosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $Nombre)
     {
         $validation = $request->validate([
             'Nombre' => 'required|string',
@@ -61,7 +61,7 @@ class InventariosController extends Controller
             'Proveedor' => 'required|string',
         ]);
 
-        $inventario = Inventarios::find($id);
+        $inventario = Inventarios::find($Nombre);
         if($inventario){
             $inventario->update($validation);
             return response()->json($inventario, 200);
@@ -73,9 +73,9 @@ class InventariosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $Nombre)
     {
-        $inventario = Inventarios::find($id);
+        $inventario = Inventarios::find($Nombre);
         if($inventario){
             $inventario->delete();
             return response()->json('Inventario eliminado', 200);

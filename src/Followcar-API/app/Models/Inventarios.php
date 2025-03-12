@@ -11,7 +11,7 @@ class Inventarios extends Model
     protected $table = 'Inventarios';
     protected $primaryKey = 'Nombre';
     protected $keyType = 'string';
-    public $incrementing = true;
+    public $incrementing = false;
     protected $fillable = [
         'Nombre',
         'Descripcion',
